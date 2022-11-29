@@ -1,3 +1,8 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
-console.log('Толян легенда массивов')
+import sayHello from "../src/cli.js";
+import parityCheck from "../bin/brain-even.js"
+
+sayHello();
+parityCheck();

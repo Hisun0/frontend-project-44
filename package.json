@@ -11,7 +11,8 @@
     "url": "git+https://github.com/Hisun0/frontend-project-44.git"
   },
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "type": "module",
   "author": "Rodion",
@@ -19,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/Hisun0/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/Hisun0/frontend-project-44#readme"
+  "homepage": "https://github.com/Hisun0/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
