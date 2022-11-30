@@ -2,7 +2,6 @@
 import readlineSync from 'readline-sync';
 
 function greatestDivisor() {
-  
   function getDivisor(a, b) {
     while (a !== b) {
       if (a > b) {
@@ -13,7 +12,7 @@ function greatestDivisor() {
     }
     return a;
   }
-  
+
   let count = 0;
 
   console.log('Find the greatest common divisor of given numbers.');
@@ -27,11 +26,11 @@ function greatestDivisor() {
     const answer = readlineSync.question('Your answer: ');
 
     if (Number(answer) === result) {
-        console.log('Correct!');
-        count += 1;
+      console.log('Correct!');
+      count += 1;
     } else {
-        console.log(`Unlucky! Correct answer was: ${getDivisor(randomNumberFirst, randomNumberSecond)}`);
-        break;
+      console.log(`Unlucky! Correct answer was: ${getDivisor(randomNumberFirst, randomNumberSecond)}`);
+      break;
     }
   }
 }
