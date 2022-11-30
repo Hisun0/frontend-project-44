@@ -1,32 +1,40 @@
 /* eslint-disable no-console */
 import readlineSync from 'readline-sync';
+import sayHello from '../src/cli.js';
+import  { randomNumber } from '../src/randomNumber.js';
 
 function parityCheck() {
-  let count = 0;
+  const name = sayHello();
+  
+  let attempts = 0;
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  while (count < 3) {
-    const randomNumber = Math.floor(Math.random() * 100);
-    console.log(`Question: ${randomNumber}`);
+  while (attempts < 3) {
+    const randomNum = randomNumber();
+    console.log(`Question: ${randomNum}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (randomNumber % 2 === 0 && answer === 'yes') {
+    if (randomNum % 2 === 0 && answer === 'yes') {
       console.log('Correct!');
-      count += 1;
-    } else if (randomNumber % 2 === 0 && answer === 'no') {
+      attempts += 1;
+    } else if (randomNum % 2 === 0 && answer === 'no') {
       console.log('Unlucky! You can try again');
       break;
-    } else if (randomNumber % 2 !== 0 && answer === 'yes') {
+    } else if (randomNum % 2 !== 0 && answer === 'yes') {
       console.log('Unlucky! You can try again.');
       break;
-    } else if (randomNumber % 2 !== 0 && answer === 'no') {
+    } else if (randomNum % 2 !== 0 && answer === 'no') {
       console.log('Correct!');
-      count += 1;
+      attempts += 1;
     } else {
       console.log('Unlucky! You can try again.');
       break;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 }
+
+parityCheck();
+
 export default parityCheck;

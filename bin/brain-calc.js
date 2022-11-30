@@ -1,16 +1,20 @@
 /* eslint-disable no-console */
 import readlineSync from 'readline-sync';
+import sayHello from '../src/cli.js';
+import { randomNumber, randomIndex } from '../src/randomNumber.js';
 
 function calcGame() {
-  let count = 0;
+  const name = sayHello();
+  
+  let attempts = 0;
   const ops = ['+', '-', '*'];
 
   console.log('What is the result of the expression?');
 
-  while (count < 3) {
-    const randomNumberFirst = Math.round(Math.random() * 10);
-    const randomNumberSecond = Math.round(Math.random() * 10);
-    const randomOps = ops[Math.round(Math.random() * 2)];
+  while (attempts < 3) {
+    const randomNumberFirst = randomNumber();
+    const randomNumberSecond = randomNumber();
+    const randomOps = ops[randomIndex()];
 
     console.log(`Question: ${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
     const answer = readlineSync.question('Your answer: ');
@@ -18,7 +22,7 @@ function calcGame() {
     if (randomOps === '+') {
       if ((randomNumberFirst + randomNumberSecond) === Number(answer)) {
         console.log('Correct!');
-        count += 1;
+        attempts += 1;
       } else {
         console.log(`Unlucky! Correct answer was: ${randomNumberFirst + randomNumberSecond}`);
         break;
@@ -26,7 +30,7 @@ function calcGame() {
     } else if (randomOps === '-') {
       if ((randomNumberFirst - randomNumberSecond) === Number(answer)) {
         console.log('Correct!');
-        count += 1;
+        attempts += 1;
       } else {
         console.log(`Unlucky! Correct answer was: ${randomNumberFirst - randomNumberSecond}`);
         break;
@@ -34,13 +38,16 @@ function calcGame() {
     } else if (randomOps === '*') {
       if ((randomNumberFirst * randomNumberSecond) === Number(answer)) {
         console.log('Correct!');
-        count += 1;
+        attempts += 1;
       } else {
         console.log(`Unlucky! Correct answer was: ${randomNumberFirst * randomNumberSecond}`);
         break;
       }
     }
   }
+  console.log(`Congratulations, ${name}!`);
 }
+
+calcGame();
 
 export default calcGame;
