@@ -23,6 +23,9 @@ function parityCheck() {
     } else if (randomNumber % 2 !== 0 && answer === 'no') {
       console.log('Correct!');
       count += 1;
+    } else {
+      console.log('Unlucky! You can try again.');
+      break;
     }
   }
 }

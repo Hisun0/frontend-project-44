@@ -20,7 +20,7 @@ function calcGame() {
         console.log('Correct!');
         count += 1;
       } else {
-        console.log('Unlucky! You can try again.');
+        console.log(`Unlucky! Correct answer was: ${randomNumberFirst + randomNumberSecond}`);
         break;
       }
     } else if (randomOps === '-') {
@@ -28,7 +28,7 @@ function calcGame() {
         console.log('Correct!');
         count += 1;
       } else {
-        console.log('Unlucky! You can try again.');
+        console.log(`Unlucky! Correct answer was: ${randomNumberFirst - randomNumberSecond}`);
         break;
       }
     } else if (randomOps === '*') {
@@ -36,7 +36,7 @@ function calcGame() {
         console.log('Correct!');
         count += 1;
       } else {
-        console.log('Unlucky! You can try again.');
+        console.log(`Unlucky! Correct answer was: ${randomNumberFirst * randomNumberSecond}`);
         break;
       }
     }
