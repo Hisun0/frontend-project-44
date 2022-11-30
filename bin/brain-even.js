@@ -24,8 +24,6 @@ function parityCheck() {
       console.log('Correct!');
       count += 1;
     }
-
   }
-
 }
 export default parityCheck;
