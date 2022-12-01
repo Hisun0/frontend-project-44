@@ -34,7 +34,7 @@ function parityCheck() {
       break;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  if (attempts === 3) console.log(`Congratulations, ${name}!`);
 }
 
 parityCheck();

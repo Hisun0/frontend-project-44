@@ -39,7 +39,7 @@ function greatestDivisor() {
       break;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  if (attempts === 3) console.log(`Congratulations, ${name}!`);
 }
 
 greatestDivisor();
