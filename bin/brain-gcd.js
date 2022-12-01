@@ -4,21 +4,10 @@
 import readlineSync from 'readline-sync';
 import sayHello from '../src/cli.js';
 import { randomNumber } from '../src/randomNumber.js';
+import { getDivisor } from '../src/numbersExpression.js';
 
 function greatestDivisor() {
   const name = sayHello();
-
-  function getDivisor(a, b) {
-    while (a !== b) {
-      if (a > b) {
-        a -= b;
-      } else {
-        b -= a;
-      }
-    }
-    return a;
-  }
-
   let attempts = 0;
 
   console.log('Find the greatest common divisor of given numbers.');
