@@ -9,5 +9,4 @@ function sayHello() {
   return name;
 }
 
-
 export default sayHello;

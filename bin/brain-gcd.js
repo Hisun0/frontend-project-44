@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
+/* eslint-disable import/extensions */
+
 import readlineSync from 'readline-sync';
 import sayHello from '../src/cli.js';
-import  { randomNumber } from '../src/randomNumber.js';
+import { randomNumber } from '../src/randomNumber.js';
 
 function greatestDivisor() {
   const name = sayHello();
-  
+
   function getDivisor(a, b) {
     while (a !== b) {
       if (a > b) {
