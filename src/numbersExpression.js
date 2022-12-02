@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-/* eslint-disable import/extensions */
+/* eslint-disable no-param-reassign */
 
 function isPrime(n) {
   let d = 2;
