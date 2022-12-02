@@ -4,29 +4,13 @@
 import readlineSync from 'readline-sync';
 import sayHello from '../src/cli.js';
 import { randomNumber } from '../src/randomNumber.js';
+import algorithm from '../src/index.js';
 
 function parityCheck() {
-  const name = sayHello();
-
-  let attempts = 0;
-
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  while (attempts < 3) {
-    const randomNum = randomNumber();
-    console.log(`Question: ${randomNum}`);
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
-
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-      attempts += 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${name}!`);
-      break;
-    }
-  }
-  if (attempts === 3) console.log(`Congratulations, ${name}!`);
+  
+  const correctAnswer = randomNumber() % 2 === 0 ? 'yes' : 'no';
+  
+  algorithm(randomNumber(), correctAnswer, 'Answer "yes" if the number is even, otherwise answer "no".');
 }
 
 parityCheck();
