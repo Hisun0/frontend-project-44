@@ -22,7 +22,7 @@ function parityCheck() {
       console.log('Correct!');
       attempts += 1;
     } else {
-      console.log(`Unlucky! Correct answer was '${correctAnswer}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${name}!`);
       break;
     }
   }
