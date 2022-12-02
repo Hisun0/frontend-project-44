@@ -25,12 +25,13 @@ function progressionGame() {
 
     console.log(`Question: ${progression}`);
     const answer = readlineSync.question('Your answer: ');
+    const correctAnswer = result[randomIndex - 1] + step;
 
-    if (Number(answer) === result[randomIndex - 1] + step) {
+    if (Number(answer) === correctAnswer) {
       console.log('Correct!');
       attempts += 1;
     } else {
-      console.log(`Unlucky! Correct answer was ${result[randomIndex - 1] + step}`);
+      console.log(`Unlucky! Correct answer was ${correctAnswer}`);
       break;
     }
   }

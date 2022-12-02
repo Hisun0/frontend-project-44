@@ -16,21 +16,13 @@ function parityCheck() {
     const randomNum = randomNumber();
     console.log(`Question: ${randomNum}`);
     const answer = readlineSync.question('Your answer: ');
+    const correctAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
 
-    if (randomNum % 2 === 0 && answer === 'yes') {
-      console.log('Correct!');
-      attempts += 1;
-    } else if (randomNum % 2 === 0 && answer === 'no') {
-      console.log('Unlucky! You can try again');
-      break;
-    } else if (randomNum % 2 !== 0 && answer === 'yes') {
-      console.log('Unlucky! You can try again.');
-      break;
-    } else if (randomNum % 2 !== 0 && answer === 'no') {
+    if (answer === correctAnswer) {
       console.log('Correct!');
       attempts += 1;
     } else {
-      console.log('Unlucky! You can try again.');
+      console.log(`Unlucky! Correct answer was '${correctAnswer}'.`);
       break;
     }
   }

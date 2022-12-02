@@ -20,31 +20,14 @@ function calcGame() {
 
     console.log(`Question: ${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
     const answer = readlineSync.question('Your answer: ');
+    const correctAnswer = eval(`${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
 
-    if (randomOps === '+') {
-      if ((randomNumberFirst + randomNumberSecond) === Number(answer)) {
-        console.log('Correct!');
-        attempts += 1;
-      } else {
-        console.log(`Unlucky! Correct answer was: ${randomNumberFirst + randomNumberSecond}`);
-        break;
-      }
-    } else if (randomOps === '-') {
-      if ((randomNumberFirst - randomNumberSecond) === Number(answer)) {
-        console.log('Correct!');
-        attempts += 1;
-      } else {
-        console.log(`Unlucky! Correct answer was: ${randomNumberFirst - randomNumberSecond}`);
-        break;
-      }
-    } else if (randomOps === '*') {
-      if ((randomNumberFirst * randomNumberSecond) === Number(answer)) {
-        console.log('Correct!');
-        attempts += 1;
-      } else {
-        console.log(`Unlucky! Correct answer was: ${randomNumberFirst * randomNumberSecond}`);
-        break;
-      }
+    if (Number(answer) === correctAnswer) {
+      console.log('Correct!');
+      attempts += 1;
+    } else {
+      console.log(`Unlucky! Correct answer was '${correctAnswer}'.`);
+      break;
     }
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);
