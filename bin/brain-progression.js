@@ -1,9 +1,10 @@
+#!/usr/bin/env node
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
-import algorithm from '../../src/index.js';
-import sayHello from '../../src/cli.js';
-import { randomStep, randomSpot } from '../../src/randomNumber.js';
+import algorithm from '../src/index.js';
+import sayHello from '../src/cli.js';
+import { randomStep, randomSpot } from '../src/randomNumber.js';
 
 function progressionGame() {
   const name = sayHello();
