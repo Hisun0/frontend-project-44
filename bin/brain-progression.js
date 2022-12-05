@@ -24,9 +24,8 @@ function progressionGame() {
     result[randomIndex] = '...';
     const progression = result.join(' ');
 
-    const question = `Question: ${progression}`;
     const correctAnswer = result[randomIndex - 1] + step;
-    attempts = algorithm(question, correctAnswer.toString(), name, attempts);
+    attempts = algorithm(progression, correctAnswer.toString(), name, attempts);
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);
 }

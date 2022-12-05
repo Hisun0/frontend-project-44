@@ -15,8 +15,7 @@ function primeGame() {
   while (attempts < 3) {
     const randomNum = randomNumber();
     const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
-    const question = `${randomNum}`;
-    attempts = algorithm(question, correctAnswer, name, attempts);
+    attempts = algorithm(randomNum, correctAnswer, name, attempts);
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);
 }
