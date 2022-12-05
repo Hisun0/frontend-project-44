@@ -20,7 +20,7 @@ function greatestDivisor() {
     const question = `${randomNumberFirst} ${randomNumberSecond}`;
     console.log(`Question: ${question}`);
     const correctAnswer = getDivisor(randomNumberFirst, randomNumberSecond);
-    attempts = algorithm(question, correctAnswer.toString(), name, attempts);
+    attempts = algorithm(correctAnswer.toString(), name, attempts);
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);
 }
