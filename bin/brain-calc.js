@@ -22,6 +22,7 @@ function calcGame() {
 
     const question = `${randomNumberFirst} ${randomOps} ${randomNumberSecond}`;
     const correctAnswer = evaluate(`${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
+    console.log(`Question: ${question}`);
     attempts = algorithm(question, correctAnswer.toString(), name, attempts);
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);

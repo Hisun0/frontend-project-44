@@ -3,9 +3,8 @@
 
 import readlineSync from 'readline-sync';
 
-function algorithm(question, correctAnswer, name, attempts) {
+function algorithm(correctAnswer, name, attempts) {
   let count = attempts;
-  console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
 
   if (answer === correctAnswer) {

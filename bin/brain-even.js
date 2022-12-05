@@ -15,7 +15,8 @@ function parityCheck() {
   while (attempts < 3) {
     const randomNum = randomNumber();
     const correctAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
-    attempts = algorithm(randomNum, correctAnswer, name, attempts);
+    console.log(`Question: ${randomNum}`);
+    attempts = algorithm(correctAnswer, name, attempts);
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);
 }
