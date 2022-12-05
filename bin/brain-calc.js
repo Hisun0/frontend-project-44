@@ -20,9 +20,8 @@ function calcGame() {
     const randomNumberSecond = randomNumber();
     const randomOps = ops[randomIndex()];
 
-    const question = `${randomNumberFirst} ${randomOps} ${randomNumberSecond}`;
     const correctAnswer = evaluate(`${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
-    console.log(`Question: ${question}`);
+    console.log(`Question: ${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
     attempts = algorithm(correctAnswer.toString(), name, attempts);
   }
   if (attempts === 3) console.log(`Congratulations, ${name}!`);
