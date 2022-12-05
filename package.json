@@ -11,12 +11,12 @@
     "url": "git+https://github.com/Hisun0/frontend-project-44.git"
   },
   "bin": {
-    "brain-games": "bin/game/brain-games.js",
-    "brain-even": "bin/game/brain-even.js",
-    "brain-calc": "bin/game/brain-calc.js",
-    "brain-gcd": "bin/game/brain-gcd.js",
-    "brain-progression": "bin/game/brain-progression.js",
-    "brain-prime": "bin/game/brain-prime.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
   },
   "type": "module",
   "author": "Rodion",
