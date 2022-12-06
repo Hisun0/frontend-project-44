@@ -2,7 +2,6 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
 
-import { evaluate } from 'mathjs';
 import sayHello from '../src/cli.js';
 import algorithm from '../src/index.js';
 import { randomNumber, randomIndex } from '../src/randomNumber.js';
@@ -19,8 +18,22 @@ function calcGame() {
     const randomNumberFirst = randomNumber();
     const randomNumberSecond = randomNumber();
     const randomOps = ops[randomIndex()];
+    let correctAnswer;
 
-    const correctAnswer = evaluate(`${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
+    switch (randomOps) {
+      case '+':
+        correctAnswer = randomNumberFirst + randomNumberSecond;
+        break;
+      case '-':
+        correctAnswer = randomNumberFirst - randomNumberSecond;
+        break;
+      case '*':
+        correctAnswer = randomNumberFirst * randomNumberSecond;
+        break;
+      default:
+        break;
+    }
+
     console.log(`Question: ${randomNumberFirst} ${randomOps} ${randomNumberSecond}`);
     attempts = algorithm(correctAnswer.toString(), name, attempts);
   }
