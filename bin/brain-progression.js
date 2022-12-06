@@ -21,7 +21,7 @@ function progressionGame() {
       result.push(i);
     }
 
-    result[randomIndex] = '...';
+    result[randomIndex] = '..';
     const progression = result.join(' ');
     const correctAnswer = result[randomIndex - 1] + step;
     console.log(`Question: ${progression}`);
