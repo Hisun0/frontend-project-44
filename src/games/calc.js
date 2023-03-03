@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import startGame from '../engine.js';
 import { getOperator, getRandomNumber } from '../tools.js';
 
 const gameDescription = 'What is the result of the expression?';
