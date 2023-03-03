@@ -20,7 +20,7 @@ const getOperator = (oper, num1, num2) => {
     default:
       break;
   }
-  return [String(correctAnswer), question];
+  return [question, String(correctAnswer)];
 };
 
 export {
