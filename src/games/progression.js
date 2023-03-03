@@ -7,10 +7,10 @@ const getProgression = () => {
   const arr = [];
   const progressionStep = getRandomNumber(1, 15);
   const progressionLength = getRandomNumber(5, 10);
-  const secretSpot = getRandomNumber(0, arr.length - 1);
   for (let i = progressionStep; i <= progressionStep * progressionLength; i += progressionStep) {
     arr.push(i);
   }
+  const secretSpot = getRandomNumber(0, arr.length - 1);
   const correctAnswer = arr[secretSpot];
   arr[secretSpot] = '..';
   const question = arr.join(' ');
