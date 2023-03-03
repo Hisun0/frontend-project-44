@@ -13,7 +13,7 @@ const calcGame = () => {
   const randomNumber2 = getRandomNumber(1, 20);
   const oper = getRandomOperator();
   const answers = getOperator(oper, randomNumber1, randomNumber2);
-  const [correctAnswer, question] = answers;
+  const [question, correctAnswer] = answers;
 
   return [question, correctAnswer];
 };
