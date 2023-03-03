@@ -6,8 +6,7 @@ const startGame = (gameDescription, gameInfo) => {
   console.log(gameDescription);
   for (let attempt = 0; attempt < 3; attempt += 1) {
     const gameData = gameInfo();
-    const question = gameData[0];
-    const correctAnswer = gameData[1];
+    const [question, correctAnswer] = gameData;
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (playerAnswer === correctAnswer) {
