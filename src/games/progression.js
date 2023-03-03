@@ -7,19 +7,19 @@ const getProgression = () => {
   const arr = [];
   const progressionStep = getRandomNumber(1, 15);
   const progressionLength = getRandomNumber(5, 10);
+  const secretSpot = getRandomNumber(0, arr.length - 1);
   for (let i = progressionStep; i <= progressionStep * progressionLength; i += progressionStep) {
     arr.push(i);
   }
-  arr[getRandomNumber(1, arr.length - 2)] = '..';
-  const correctAnswer = arr[arr.indexOf('..') - 1] + progressionStep;
-  const result = arr.join(' ');
-  return [correctAnswer, result];
+  const correctAnswer = arr[secretSpot];
+  arr[secretSpot] = '..';
+  const question = arr.join(' ');
+  return [question, correctAnswer];
 };
 
 const progressionGame = () => {
   const answers = getProgression();
-  const correctAnswer = answers[0];
-  const question = answers[1];
+  const [question, correctAnswer] = answers;
 
   return [question, String(correctAnswer)];
 };
